@@ -21,15 +21,15 @@ server.get('/test', (req, res, next) => {
   ])
 });
 
-server.get('/user/signin/callback', (req, res) => {
+server.get('/users/sign-in/callback', (req, res) => {
   const { query } = req;
   const { code } = query;
-
+  console.log(code);
   if(code){
     axios.post('https://github.com/login/oauth/access_token', { 
       code,
-      client_id: 'e87c1c7838200c6a1f9a',
-      client_secret: 'e9de7e54b416c331ad80e7724c24e55606dec49d'
+      client_id: 'fc4e944b148c9a51afeb',
+      client_secret: '0cc62143ae841cf06a933c0ab7cd6279ace7235b'
     }, {
       headers: {'Accept': 'application/json'}
     })
